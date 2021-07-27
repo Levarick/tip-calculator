@@ -1,4 +1,3 @@
-console.log('calculador');
 const BillInvoice = document.getElementById('billInvoice');
 const NumberPeople = document.getElementById('numOfPeople');
 let TotalAmount = document.getElementById('totalAmount');
@@ -9,8 +8,6 @@ const MessagePeople = document.getElementById('messagePeople');
 var tipBill = 0;
 var messageError = '';
 
-console.log({ BillInvoice, NumberPeople, TotalAmount, TipAmount: TipXPerson });
-
 tipSelected = (e) => {
   tipBill = parseInt(e.target.value);
   calculateTip();
@@ -18,7 +15,6 @@ tipSelected = (e) => {
 
 validateMessages = () => {
   if (BillInvoice.value === '') {
-    console.log('ingrese el bill');
     MessageBill.innerText = `Bill can't be 0`;
   }
   if (NumberPeople.value === '') {
@@ -42,7 +38,6 @@ calculateTip = () => {
   }
   TotalAmount.innerText = tipMountTotal;
   TipXPerson.innerText = tipMountXPerson;
-  console.log(`total amount: ${tipMountTotal} tipXperson: ${tipMountXPerson}`);
 };
 
 resetValues = () => {
