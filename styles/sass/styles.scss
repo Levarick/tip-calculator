@@ -5,6 +5,7 @@ $dark-color-light: hsl(184, 14%, 56%);
 $ligth-color: hsl(185, 41%, 84%);
 $light-color-light: hsl(189, 41%, 97%);
 $white-color: hsl(0, 0%, 100%);
+$error-color: hsl(0, 100%, 50%);
 $font-family: 'Space Mono', monospace;
 
 @mixin grid {
@@ -16,7 +17,7 @@ $font-family: 'Space Mono', monospace;
 * {
   margin: 0;
   padding: 0;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -30,10 +31,9 @@ header {
   font-size: 2.6rem;
   padding: 40px 0;
   color: $primary-color-dark;
-  p {
-    margin: auto;
+
+  .header__title--format {
     text-align: center;
-    width: 120px;
   }
 }
 
@@ -78,12 +78,12 @@ label {
   border-radius: 5px;
   color: $white-color;
   background-color: $primary-color-dark;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   &:hover {
     background-color: $primary-color;
     color: $primary-color-dark;
   }
-} 
+}
 
 #customInput {
   text-align: right;
@@ -104,13 +104,21 @@ form > * {
   }
 }
 
-#grid{
+#grid {
   @include grid;
 }
 
 section:nth-child(1) {
   margin: auto;
   max-width: 295px;
+}
+.input__values {
+  display: flex;
+  justify-content: space-between;
+
+  .error__message {
+    color: $error-color;
+  }
 }
 
 section:nth-child(2) {
@@ -184,9 +192,9 @@ section > div {
   }
 }
 
-@media (min-width:910px) {
+@media (min-width: 910px) {
   #grid {
-    gap:10px;
+    gap: 10px;
   }
   main {
     width: initial;

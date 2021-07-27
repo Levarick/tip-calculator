@@ -16,10 +16,8 @@ header {
   padding: 40px 0;
   color: #00494d;
 }
-header p {
-  margin: auto;
+header .header__title--format {
   text-align: center;
-  width: 120px;
 }
 
 body {
@@ -98,6 +96,14 @@ form > *:last-child {
 section:nth-child(1) {
   margin: auto;
   max-width: 295px;
+}
+
+.input__values {
+  display: flex;
+  justify-content: space-between;
+}
+.input__values .error__message {
+  color: red;
 }
 
 section:nth-child(2) {

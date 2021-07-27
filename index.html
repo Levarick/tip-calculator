@@ -1,60 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./styles/css/styles.css"><link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <title>Frontend Mentor | Tip calculator app</title>
-</head>
-<body>
-  <header>
-    <p>SPLITTER</p>
-  </header>
-  <main>
-    <section>
-      <form>
-        <label for="numOfPeople">Bill</label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="header__title--format">SPLITTER</h1>
+    </header>
+    <main>
+      <section>
+        <form>
+          <div class="input__values">
+            <label for="billInvoice">Bill</label>
+            <label id="messageBill" class="error__message"></label>
+          </div>
+          <div>
+            <i class="fas fa-dollar-sign"></i>
+            <input
+              class="inputText"
+              id="billInvoice"
+              type="text"
+              placeholder="0"
+              onchange="tipSelected(event)"
+            />
+          </div>
+          <label for="select-tip">Select Tip %</label>
+          <div id="grid">
+            <input
+              id="tip5"
+              class="button"
+              onclick="tipSelected(event)"
+              type="button"
+              value="5%"
+            />
+            <input
+              id="tip10"
+              class="button"
+              onclick="tipSelected(event)"
+              type="button"
+              value="10%"
+            />
+            <input
+              id="tip15"
+              class="button"
+              onclick="tipSelected(event)"
+              type="button"
+              value="15%"
+            />
+            <input
+              id="tip25"
+              class="button"
+              onclick="tipSelected(event)"
+              type="button"
+              value="25%"
+            />
+            <input
+              id="tip50"
+              class="button"
+              onclick="tipSelected(event)"
+              type="button"
+              value="50%"
+            />
+            <input
+              id="customInput"
+              class="inputText"
+              type="number"
+              onchange="tipSelected(event)"
+              placeholder="Custom"
+              min="1"
+            />
+          </div>
+          <div class="input__values">
+            <label for="numOfPeople">Number of people</label>
+            <label id="messagePeople" class="error__message"></label>
+          </div>
+          <div>
+            <i class="fas fa-user"></i>
+            <input
+              class="inputText"
+              id="numOfPeople"
+              type="text"
+              placeholder="0"
+              onchange="tipSelected(event)"
+            />
+          </div>
+        </form>
+      </section>
+      <section>
         <div>
-          <i class="fas fa-dollar-sign"></i>
-          <input class="inputText" id= "numOfPeople"type="text" placeholder="0">
+          <div>
+            <h3>Tip Amount</h3>
+            <p>/ person</p>
+          </div>
+          <p id="tipXPerson"></p>
         </div>
-        <label for="select-tip">Select Tip %</label>
-        <div id="grid">
-          <input class="button" type="button" value="5%">
-          <input class="button" type="button" value="10%">
-          <input class="button" type="button" value="15%">
-          <input class="button" type="button" value="25%">
-          <input class="button" type="button" value="50%">
-          <input id="customInput" class="inputText" type="number" placeholder="Custom">
-        </div>
-        <label for="numOfPeople">Number of people</label>
         <div>
-          <i class="fas fa-user"></i>
-          <input class="inputText" id= "numOfPeople"type="text" placeholder="0">
+          <div>
+            <h3>Total</h3>
+            <p>/ person</p>
+          </div>
+          <p id="totalAmount">$34.3</p>
         </div>
-      </form>
-    </section>
-    <section>
-      <div>
-        <div>
-          <h3>Tip Amount</h3>
-          <p>/ person</p>
-        </div>
-        <p id="tipAmount"></p>
-      </div>
-      <div>    
-        <div>
-        <h3>Total</h3>
-        <p>/ person</p>
-        </div>
-        <p id="totalAmount">$34.3</p>
-      </div>
-      <button>Reset</button>
-    </section>
-  </main>
-<script src="https://kit.fontawesome.com/8b4bc8b924.js" crossorigin="anonymous"></script>
-</body>
+        <button onclick="resetValues()">Reset</button>
+      </section>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/8b4bc8b924.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
 </html>
