@@ -4,6 +4,7 @@ let TotalAmount = document.getElementById('totalAmount');
 let TipXPerson = document.getElementById('tipXPerson');
 const MessageBill = document.getElementById('messageBill');
 const MessagePeople = document.getElementById('messagePeople');
+const form = document.querySelector('form');
 
 var tipBill = 0;
 var messageError = '';
@@ -43,8 +44,7 @@ calculateTip = () => {
 resetValues = () => {
   MessageBill.value = '';
   MessagePeople.innerText = '';
-  BillInvoice.innerText = '';
-  NumberPeople.innerText = '';
   TotalAmount.innerText = '';
   TipXPerson.innerText = '';
+  form.reset();
 };
