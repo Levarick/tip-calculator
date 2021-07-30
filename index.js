@@ -37,8 +37,8 @@ calculateTip = () => {
   } else {
     validateMessages();
   }
-  TotalAmount.innerText = tipMountTotal;
-  TipXPerson.innerText = tipMountXPerson;
+  TotalAmount.innerText = tipMountTotal.toFixed(2);
+  TipXPerson.innerText = tipMountXPerson.toFixed(2);
 };
 
 resetValues = () => {
